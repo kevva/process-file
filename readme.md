@@ -30,7 +30,7 @@ processFile('unicorn.csv', csvParser(), function (err, data) {
 #### file
 
 *Required*  
-Type: `string`
+Type: `string`, `buffer`
 
 File to process.
 
