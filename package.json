@@ -1,6 +1,6 @@
 {
   "name": "process-file",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Process a file and return the results as a callback",
   "license": "MIT",
   "repository": "kevva/process-file",
