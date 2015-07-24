@@ -1,0 +1,35 @@
+{
+  "name": "process-file",
+  "version": "0.0.0",
+  "description": "Process a file and return the results as a callback",
+  "license": "MIT",
+  "repository": "kevva/process-file",
+  "author": {
+    "email": "kevinmartensson@gmail.com",
+    "name": "Kevin Mårtensson",
+    "url": "github.com/kevva"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "node test.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "callback",
+    "file",
+    "process",
+    "return",
+    "stream"
+  ],
+  "dependencies": {
+    "concat-stream": "^1.5.0"
+  },
+  "devDependencies": {
+    "ava": "^0.0.4",
+    "csv-parser": "^1.7.0"
+  }
+}
