@@ -1,24 +1,23 @@
-'use strict';
-var fs = require('fs');
-var csvParser = require('csv-parser');
-var test = require('ava');
-var processFile = require('./');
+import fs from 'fs';
+import csvParser from 'csv-parser';
+import test from 'ava';
+import processFile from './';
 
-test('process file using filepath', function (t) {
+test('process file using filepath', async t => {
 	t.plan(2);
 
-	processFile(__dirname + '/fixture.csv', csvParser()).then(function (data) {
-		t.assert(data[0].foo === 'unicorn');
-		t.assert(data[0].bar === 'cat');
-	});
+	const data = await processFile(__dirname + '/fixture.csv', csvParser());
+
+	t.is(data[0].foo, 'unicorn');
+	t.is(data[0].bar, 'cat');
 });
 
-test('process file using buffer', function (t) {
+test('process file using buffer', async t => {
 	t.plan(2);
-	var buf = fs.readFileSync(__dirname + '/fixture.csv');
 
-	processFile(buf, csvParser()).then(function (data) {
-		t.assert(data[0].foo === 'unicorn');
-		t.assert(data[0].bar === 'cat');
-	});
+	const buf = fs.readFileSync(__dirname + '/fixture.csv');
+	const data = await processFile(buf, csvParser());
+
+	t.is(data[0].foo, 'unicorn');
+	t.is(data[0].bar, 'cat');
 });
