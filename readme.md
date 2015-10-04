@@ -13,10 +13,10 @@ $ npm install --save process-file
 ## Usage
 
 ```js
-var csvParser = require('csv-parser');
-var processFile = require('process-file');
+const csvParser = require('csv-parser');
+const processFile = require('process-file');
 
-processFile('unicorn.csv', csvParser(), function (err, data) {
+processFile('unicorn.csv', csvParser()).then(data => {
 	console.log(data);
 	//=> [{foo: 'bar', unicorn: 'awesome'}]
 });
@@ -25,7 +25,9 @@ processFile('unicorn.csv', csvParser(), function (err, data) {
 
 ## API
 
-### processFile(file, stream, callback)
+### processFile(file, stream)
+
+Returns a promise that resolves to your processed result.
 
 #### file
 
@@ -40,13 +42,6 @@ File to process.
 Type: `object`
 
 Stream to process the file with.
-
-#### callback(err, data)
-
-*Required*  
-Type: `function`
-
-Returns the results in `data`.
 
 
 ## License

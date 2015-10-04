@@ -1,29 +1,28 @@
 'use strict';
 var fs = require('fs');
 var concatStream = require('concat-stream');
+var Promise = require('pinkie-promise');
 
-module.exports = function (file, stream, cb) {
-	var isBuffer = Buffer.isBuffer(file);
-	var concat = concatStream(end);
-	var read;
+module.exports = function (file, stream) {
+	return new Promise(function (resolve, reject) {
+		var isBuffer = Buffer.isBuffer(file);
+		var concat = concatStream(resolve);
+		var read;
 
-	if (!isBuffer) {
-		read = fs.createReadStream(file);
-		read.on('error', cb);
-	}
+		if (!isBuffer) {
+			read = fs.createReadStream(file);
+			read.on('error', reject);
+		}
 
-	function end(buf) {
-		cb(null, buf);
-	}
+		concat.on('error', reject);
+		stream.on('error', reject);
 
-	concat.on('error', cb);
-	stream.on('error', cb);
+		if (isBuffer) {
+			stream.end(file);
+		} else {
+			read.pipe(stream);
+		}
 
-	if (isBuffer) {
-		stream.end(file);
-	} else {
-		read.pipe(stream);
-	}
-
-	stream.pipe(concat);
+		stream.pipe(concat);
+	});
 };
