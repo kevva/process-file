@@ -1,6 +1,6 @@
 # process-file [![Build Status](https://travis-ci.org/kevva/process-file.svg?branch=master)](https://travis-ci.org/kevva/process-file)
 
-> Process a file and return the results as a callback
+> Process a file and return the results as a Promise
 
 
 ## Install
