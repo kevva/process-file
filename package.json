@@ -1,7 +1,7 @@
 {
   "name": "process-file",
   "version": "2.0.0",
-  "description": "Process a file and return the results as a callback",
+  "description": "Process a file and return the results as a promise",
   "license": "MIT",
   "repository": "kevva/process-file",
   "author": {
@@ -19,9 +19,9 @@
     "index.js"
   ],
   "keywords": [
-    "callback",
     "file",
     "process",
+    "promise",
     "return",
     "stream"
   ],

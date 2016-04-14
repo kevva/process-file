@@ -1,6 +1,6 @@
 # process-file [![Build Status](https://travis-ci.org/kevva/process-file.svg?branch=master)](https://travis-ci.org/kevva/process-file)
 
-> Process a file and return the results as a Promise
+> Process a file and return the results as a promise
 
 
 ## Install
@@ -31,14 +31,14 @@ Returns a promise that resolves to your processed result.
 
 #### file
 
-*Required*  
+*Required*<br>
 Type: `string`, `buffer`
 
 File to process.
 
 #### stream
 
-*Required*  
+*Required*<br>
 Type: `object`
 
 Stream to process the file with.
