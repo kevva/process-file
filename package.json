@@ -30,13 +30,8 @@
     "pinkie-promise": "^1.0.0"
   },
   "devDependencies": {
-    "ava": "^0.2.0",
+    "ava": "*",
     "csv-parser": "^1.7.0",
     "xo": "*"
-  },
-  "xo": {
-    "ignores": [
-      "test.js"
-    ]
   }
 }
