@@ -1,16 +1,16 @@
 {
   "name": "process-file",
   "version": "2.0.1",
-  "description": "Process a file and return the results as a promise",
+  "description": "Process a file and return the results as a Promise",
   "license": "MIT",
   "repository": "kevva/process-file",
   "author": {
-    "email": "kevinmartensson@gmail.com",
     "name": "Kevin Mårtensson",
+    "email": "kevinmartensson@gmail.com",
     "url": "github.com/kevva"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=4"
   },
   "scripts": {
     "test": "xo && ava"
@@ -26,12 +26,14 @@
     "stream"
   ],
   "dependencies": {
-    "concat-stream": "^1.5.0",
-    "pinkie-promise": "^1.0.0"
+    "concat-stream": "^1.5.0"
   },
   "devDependencies": {
     "ava": "*",
     "csv-parser": "^1.7.0",
     "xo": "*"
+  },
+  "xo": {
+    "esnext": true
   }
 }

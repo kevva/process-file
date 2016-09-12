@@ -1,13 +1,13 @@
 'use strict';
-var fs = require('fs');
-var concatStream = require('concat-stream');
-var Promise = require('pinkie-promise');
+const fs = require('fs');
+const concatStream = require('concat-stream');
 
 module.exports = function (file, stream) {
-	return new Promise(function (resolve, reject) {
-		var isBuffer = Buffer.isBuffer(file);
-		var concat = concatStream(resolve);
-		var read;
+	return new Promise((resolve, reject) => {
+		const isBuffer = Buffer.isBuffer(file);
+		const concat = concatStream(resolve);
+
+		let read;
 
 		if (!isBuffer) {
 			read = fs.createReadStream(file);

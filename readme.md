@@ -1,6 +1,6 @@
 # process-file [![Build Status](https://travis-ci.org/kevva/process-file.svg?branch=master)](https://travis-ci.org/kevva/process-file)
 
-> Process a file and return the results as a promise
+> Process a file and return the results as a Promise
 
 
 ## Install
@@ -27,18 +27,16 @@ processFile('unicorn.csv', csvParser()).then(data => {
 
 ### processFile(file, stream)
 
-Returns a promise that resolves to your processed result.
+Returns a `Promise` that resolves to your processed result.
 
 #### file
 
-*Required*<br>
-Type: `string`, `buffer`
+Type: `string` `Buffer`
 
 File to process.
 
 #### stream
 
-*Required*<br>
 Type: `object`
 
 Stream to process the file with.
@@ -46,4 +44,4 @@ Stream to process the file with.
 
 ## License
 
-MIT © [Kevin Mårtensson](http://github.com/kevva)
+MIT © [Kevin Mårtensson](https://github.com/kevva)
